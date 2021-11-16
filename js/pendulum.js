@@ -91,6 +91,7 @@ class Pendulum {
                 var octave = 1 + (7 / pendulum.octaves) | 0 + (i / pendulum.music.scale.length) | 0;
                 var reverb = octave * pendulum.reverb;
 
+                pendulum.flipping = true;
                 pendulum.sound.play(pendulum.notes[i], octave, reverb);
                 pendulum.dphi2 = (Math.abs(pendulum.dphi1) + 0.5) * (pendulum.dphi2 < 0 ? 1 : -1);
                 pendulum.dphi1 /= 3;
