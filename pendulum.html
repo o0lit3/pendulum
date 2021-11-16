@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Hard Take</title>
+        <link rel="shortcut icon" href="favicon.ico" /> 
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+
+    <body class="pendulum">
+        <div id="music" class="row">
+            <div id="pendulum" class="column left">
+                <canvas></canvas>
+            </div>
+            <div class="column right">
+                <div class="settings">
+                    <h2>Settings</h2>
+
+                    <fieldset>
+                        <label for="Mass1">Mass1</label>
+                        <input class="mass1" name="mass1" value="10" disabled="disabled" />
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="mass2">Mass2</label>
+                        <input class="mass2" name="mass2" value="10" disabled="disabled" />
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="Len1">Len1</label>
+                        <input class="len1" name="len1" value="0.75" disabled="disabled" />
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="len2">Len2</label>
+                        <input class="len2" name="len2" value="0.375" disabled="disabled" />
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="phi1">Phi1*</label>
+                        <input class="phi1" name="phi1" value="3.14" />
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="phi2">Phi2*</label>
+                        <input class="phi2" name="phi2" value="0" />
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="gravity">Gravity</label>
+                        <input class="gravity" name="gravity" value="9.8" />
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="key">Key*</label>
+                        <select class="setting" name="key">
+                            <option value="C" selected="selected">C</option>
+                            <option value="C#">C#</option>
+                            <option value="D">D</option>
+                            <option value="Eb">Eb</option>
+                            <option value="E">E</option>
+                            <option value="F">F</option>
+                            <option value="F#">F#</option>
+                            <option value="G">G</option>
+                            <option value="Ab">Ab</option>
+                            <option value="A">A</option>
+                            <option value="Bb">Bb</option>
+                            <option value="B">B</option>
+                        </select> 
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="mode">Mode*</label>
+                        <select class="setting" name="mode">
+                            <option value="major" selected="selected">Major (Ionian)</option>
+                           <option value="minor">Minor (Aeolian)</option>
+                            <option value="locrian">Locrian</option>
+                            <option value="dorian">Dorian</option>
+                            <option value="phrygian">Phrygian</option>
+                            <option value="lydian">Lydian</option>
+                            <option value="mixolydian">Mixolydian</option>
+                            <option value ="melodic minor">Melodic Minor</option>
+                            <!--<option value="dorian b2">Dorian b2</option>-->
+                            <!--<option value="lydian augmented">Lydian Augmented</option>-->
+                            <!--<option value="lydian dominant">Lydian Dominant</option>-->
+                            <!--<option value="mixolydian b6">Mixolydian b6</option>-->
+                            <!--<option value="half-diminished">Half-Diminished</option>-->
+                            <!--<option value="altered">Altered</option>-->
+                            <option value="harmonic major">Harmonic Major</option>
+                            <option value="harmonic minor">Harmonic Minor</option>
+                            <option value="blues">Blues</option>
+                            <option value="major pentatonic">Major Pentatonic</option>
+                            <option value="minor pentatonic">Minor Pentatonic</option>
+                            <option value="suspended">Suspended (Egyptian)</option>
+                            <option value="blues major">Blues Major</option>
+                            <option value="blues minor">Blues Minor</option>
+                            <option value="whole">Whole</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="instrument">Instrument</label>
+                        <select class="setting" name="instrument">
+                            <option value="piano">Piano</option>
+                            <option value="guitar">Guitar</option>
+                            <option value="grand piano" selected="selected">Grand Piano</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="octaves">Octaves</label>
+                        <select class="setting" name="octaves">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3" selected="selected">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <span class="note">*Settings changed on randomize</span>
+                        <button name="play">Play</button>
+                        <button name="randomize">Randomize</button>
+                        <button name="reset">Reset</button>
+                    </fieldset>
+                </div>
+            </div>
+
+            <script src="js/synth.js"></script>
+            <script src="js/music.js"></script>
+            <script src="js/pendulum.js"></script>
+
+            <script language="javascript">
+                new Pendulum('pendulum');
+            </script>
+        </div>
+    </body>
+</html>

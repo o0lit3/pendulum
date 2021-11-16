@@ -1,0 +1,8 @@
+body.composer { background-color: #000; color: #fff }
+.column { float: left; height: 100vh }
+.column.left { width: 70% }
+.column.right { width: 30% }
+.sorter { float: left; margin: 10px }
+.header { height: 60px }
+.header > h2 { margin-bottom: 0 }
+.note { font-style: italic; display: block; margin-bottom: 10px }
