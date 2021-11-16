@@ -86,7 +86,7 @@ class Pendulum {
 
             pendulum.move();
 
-            if (!flipping && pendulum.distance(pendulum.circle2) > pendulum.center.r - pendulum.circle2.mass / 2) {
+            if (!pendulum.flipping && pendulum.distance(pendulum.circle2) > pendulum.center.r - pendulum.circle2.mass / 2) {
                 var i = sector(pendulum.center, pendulum.circle2);
                 var octave = 1 + (7 / pendulum.octaves) | 0 + (i / pendulum.music.scale.length) | 0;
                 var reverb = octave * pendulum.reverb;
