@@ -56,7 +56,6 @@ class Pendulum {
 
         var render = function() {
             var mu = 1 + pendulum.mass1 / pendulum.mass2;
-            var flipping = false;
 
             var d2phi1 = (
               pendulum.gravity * (
@@ -91,16 +90,15 @@ class Pendulum {
                 var i = sector(pendulum.center, pendulum.circle2);
                 var octave = 1 + (7 / pendulum.octaves) | 0 + (i / pendulum.music.scale.length) | 0;
                 var reverb = octave * pendulum.reverb;
-                flipping = true;
 
                 pendulum.sound.play(pendulum.notes[i], octave, reverb);
                 pendulum.dphi2 = (Math.abs(pendulum.dphi1) + 0.5) * (pendulum.dphi2 < 0 ? 1 : -1);
                 pendulum.dphi1 /= 3;
                 pendulum.move();
             } else if (pendulum.distance(pendulum.circle2) > pendulum.center.r - pendulum.circle2.mass / 2) {
-                flipping = true;
+                pendulum.flipping = true;
             } else {
-                flipping = false;
+                pendulum.flipping = false;
             }
 
             pendulum.line1.x = pendulum.circle1.x;
@@ -234,6 +232,7 @@ class Pendulum {
         this.phi1 = parseFloat(document.getElementsByName('phi1')[0].value);
         this.phi2 = parseFloat(document.getElementsByName('phi2')[0].value);
         this.gravity = parseInt(document.getElementsByName('gravity')[0].value);
+        this.flipping = false;
         this.sound = this.vocalize(document.getElementsByName('instrument')[0]);
         this.key = document.getElementsByName('key')[0].value;
         this.mode = document.getElementsByName('mode')[0].value;
